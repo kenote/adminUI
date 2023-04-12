@@ -3,10 +3,11 @@ import { getModelForClass } from '@typegoose/typegoose'
 import * as entities from '~/entities'
 import { FilterQuery, Model, Document } from 'mongoose'
 import { ErrorCode, httpError, Bcrypt } from '~/services'
-import { merge, omit } from 'lodash'
+import { isArray, merge, omit } from 'lodash'
 import { MASTER_GROUP_LEVEL } from '~/config'
 import type { DB } from '@/types/services'
 import type { Account } from '@/types/account'
+import * as db from './'
 
 export const model = getModelForClass(entities.User)
 export const Dao = modelDao<DB.user.User>(model as unknown as Model<Document, {}>, {
@@ -99,6 +100,28 @@ export async function login (body: Account.login) {
   }
   // 查询到多个账号
   return results
+}
+
+/**
+ * 选择登录
+ * @param doc 
+ * @returns 
+ */
+export async function loginSlect (doc: Account.uuidResult<string>) {
+  let verify = await db.verify.Dao.findOne({ type: 'login', token: doc.uuid })
+  if (!verify) {
+    throw httpError(ErrorCode.ERROR_NOT_FOUND_ACCESSKEY, ['登录'])
+  }
+  let ids = JSON.parse(verify.application ?? '[]')
+  if (!isArray(ids) || !ids.includes(doc.result)) {
+    throw httpError(ErrorCode.ERROR_VALID_IDMARK_NOTEXIST)
+  }
+  await db.verify.Dao.remove({ type: 'login', token: doc.uuid })
+  let user = await Dao.findOne({ _id: doc.result })
+  if (!user) {
+    throw httpError(ErrorCode.ERROR_FINDUSER_NOTEXIST)
+  }
+  return user
 }
 
 /**

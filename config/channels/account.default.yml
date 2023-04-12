@@ -1,0 +1,16 @@
+---
+# 频道 key
+key: !!str 1
+# 频道 名称
+name: 我的帐户
+# 频道标识
+label: account
+# 频道描述
+description: 查看和管理自己的信息、活动、安全选项和隐私偏好设置
+# 路由入口
+route: /account
+# 图标
+icon: iconfont icon-passport
+# 选项
+options: {}
+# 分栏页面

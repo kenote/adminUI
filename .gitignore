@@ -45,11 +45,12 @@ yarn.lock
 
 
 dist/
-config/**/*.yml
-!config/**/*.default.yml
+/config/**/*.yml
+!/config/**/*.default.yml
+!/config/filters/**/*
 
 # Channel
-channels/
+/channels/
 
 # Develop
 .develop/

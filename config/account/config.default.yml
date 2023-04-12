@@ -36,7 +36,7 @@ login:
   # 背景图
   backgroundImg: https://img.alicdn.com/imgextra/i4/O1CN01DqCR171s5yghmZccz_!!6000000005716-0-tps-2880-1434.jpg
   # 营销活动
-  # marketing:
-  #   name: 营销活动
-  #   image: https://img.alicdn.com/imgextra/i4/O1CN01YT9mQt1SwwTrSIPb8_!!6000000002312-2-tps-780-1036.png
-  #   link: https://www.baidu.com|__blank
+  marketing:
+    name: 营销活动
+    image: https://img.alicdn.com/imgextra/i4/O1CN01YT9mQt1SwwTrSIPb8_!!6000000002312-2-tps-780-1036.png
+    link: https://www.baidu.com|__blank

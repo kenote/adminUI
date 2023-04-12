@@ -1,0 +1,31 @@
+---
+# 应用名称
+name: adminUI
+
+# 主机IP
+host: localhost
+
+# 端口
+port: 4000
+
+# Secret Key
+secretKey: admin-ui
+
+# MongoDB
+mongoOpts:
+  uris: mongodb://localhost:27017/admin-ui
+  options:
+    useNewUrlParser: true
+    useCreateIndex: true
+    useUnifiedTopology: true
+    useFindAndModify: false
+
+# Redis
+redisOpts:
+  host: 127.0.0.1
+  port: 6379
+  db: 0
+
+# 版权
+copyright: MIT Licensed | Copyright © 2019-2022 Kenote.dev 版权所有
+

@@ -5,4 +5,9 @@ export declare namespace Account {
     username    ?: string
     password    ?: string
   }
+
+  interface uuidResult<T> {
+    uuid        ?: string
+    result       : T
+  }
 }
