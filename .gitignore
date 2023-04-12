@@ -40,6 +40,27 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+package-lock.json
+yarn.lock
+
+
+dist/
+config/**/*.yml
+!config/**/*.default.yml
+
+# Channel
+channels/
+
+# Develop
+.develop/
+
+# Backup
+.backup/
+
+# Deploy
+deploy.config.*
+.deploy/
+*.tar.gz
 
 # TypeScript v1 declaration files
 typings/

@@ -1,0 +1,11 @@
+---
+# API BaseURL
+baseUrl: https://api.openai.com
+
+# 默认 API Key 别名
+apiKeyName: default
+
+# 设置多个 API Key
+apiKeys:
+  - name: default
+    value: ''

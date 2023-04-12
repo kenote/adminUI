@@ -1,0 +1,40 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": [
+      "ESNext",
+      "ESNext.AsyncIterable",
+      "DOM",
+      "ESNext.BigInt"
+    ],
+    "module": "ESNext",
+    "allowJs": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "jsxFactory": "React.createElement",
+    "jsx": "preserve",
+    "noImplicitThis": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./web/*"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    "types": [
+      "@nuxt/types"
+    ]
+  },
+  "vueCompilerOptions": {
+    "extensions": [
+      ".vue"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "server"
+  ]
+}
